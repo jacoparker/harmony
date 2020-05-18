@@ -5,7 +5,9 @@ import './Message.css';
 const Message = ({ message: {user, text}, name }) => {
     let isSentByCurrUser = false;
 
-    if (user === name) {
+    const trimmedName = name.trim().toLowerCase();
+
+    if (user === trimmedName) {
         isSentByCurrUser = true;
     }
 
@@ -26,7 +28,8 @@ const Message = ({ message: {user, text}, name }) => {
             </div>
             <p className="sentText pl-010">{user}</p>
         </div>
-    ));
+        )
+    );
 }
 
 export default Message;
